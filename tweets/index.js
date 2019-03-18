@@ -13,6 +13,7 @@ const client = new Twitter({
 app.get('/tweets/:query', (req, res) => {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Headers', 'X-Requested-With')
+  res.setHeader('Content-Type', 'application/json')
 
   client.get('search/tweets', { q: req.params.query }, function(
     error,
